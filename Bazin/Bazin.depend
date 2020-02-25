@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1582576293 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
+	"Antrenor.h"
+	<iostream>
+
+1582579170 d:\curs c++\proiectegithub\proiect-final\bazin\include\antrenor.h
+	<iostream>
+	<vector>
+	"Cursant.h"
+
+1582579317 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
+	"Bazin.h"
+
+1582576591 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
+	<vector>
+	"Antrenor.h"
+	"Cursant.h"
+
+1582572333 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
+	<iostream>
+	<vector>
+	"Bazin.h"
+
+1582576435 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\cursant.cpp
+	"Cursant.h"
+
+1582577412 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursant.h
+	<iostream>
+
