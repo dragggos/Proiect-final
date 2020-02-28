@@ -15,12 +15,25 @@ void Bazin::AdaugaAntrenor()
     vect_antrenor.push_back(Antrenor(n,p,i));
     i++;
 }
-void Bazin::AfiseazaCursantiAntrenor()
+void Bazin::AdaugaCursant()
 {
-    for (unsigned int i=0; i<=vect_antrenor.size();i++)
-       {
+    bool este=false;
+    for (unsigned int i=0;i<=vect_antrenor.size();i++)
+        if (vect_antrenor[i].VerificaDispAntrenor())
+            {
+              este=true;
+              break;
+            }
+     if este vect_antrenor[].CreazaCursant;
+        {
 
-       }
+
+
+        }
+
+
+
+
 }
 Bazin::~Bazin()
 {

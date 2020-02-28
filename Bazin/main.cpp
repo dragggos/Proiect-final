@@ -13,7 +13,7 @@ void Meniu()
     cout<<endl;
     cout<<"1. Adauga antrenor"<<endl;
     cout<<"2. Sterge antrenor"<<endl;
-    cout<<"3. Afiseaza ore antrenor"<<endl;
+    cout<<"3. Afiseaza cursanti antrenor"<<endl;
     cout<<"4. Adauga cursant"<<endl;
     cout<<"5. Sterge cursant"<<endl;
     cout<<"6. Vizualizare cursanti potentiali"<<endl;
@@ -37,8 +37,7 @@ int main()
      switch (n)
      {
          case 1: bazin.AdaugaAntrenor();break;
-         case 2:{};
-
+      //   case 4: bazin.AdaugaCursant();break;
      }
 
   }

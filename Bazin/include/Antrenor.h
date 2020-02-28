@@ -12,8 +12,11 @@ class Antrenor
         Antrenor();
         Antrenor(string,string,short);
         virtual ~Antrenor();
-        void AdaugaCursant();
+        void CreazaCursant();
         void AfiseazaCursant();
+        bool VerificaDispAntrenor();
+        void AfiseazaCursantiAntrenor();
+
 
     protected:
 
@@ -21,6 +24,8 @@ class Antrenor
         string nume_ant,prenume_ant;
         short id=0;
         vector<Cursant> vect_cursant;
+
+
 };
 
 #endif // ANTRENOR_H

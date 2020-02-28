@@ -13,7 +13,19 @@ Antrenor::Antrenor(string n, string p, short i)
     prenume_ant=p;
     id=i;
 }
-void Antrenor::AdaugaCursant()
+
+bool Antrenor::VerificaDispAntrenor()
+{
+    if (vect_cursant.size()<40) return true;
+      else return false;
+}
+void Antrenor::AfiseazaCursant()
+{
+    for(unsigned int i=0; i<=vect_cursant.size();i++)
+        cout<<i+1<<"."<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_categorie_cursant()<<endl;
+    cout<<"Total cursanti : "<<vect_cursant.size()<<endl;
+}
+void Antrenor::CreazaCursant()
 {
     string n,p;
     short c;
@@ -24,11 +36,6 @@ void Antrenor::AdaugaCursant()
     cout<<"Introduceti categorie cursant: 1.copil, 2.student, 3.adult, 4. pensionar: ";
     cin>>c;
     vect_cursant.push_back(Cursant(n,p,c));
-}
-void Antrenor::AfiseazaCursant()
-{
-    for(unsigned int i=0; i<=vect_cursant.size();i++)
-        cout<<vect_cursant[i].Get_prenume_cursant();
 }
 Antrenor::~Antrenor()
 {

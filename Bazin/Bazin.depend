@@ -1,22 +1,23 @@
 # depslib dependency file v1.0
-1582576293 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
+1582656894 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
 	"Antrenor.h"
 	<iostream>
 
-1582579170 d:\curs c++\proiectegithub\proiect-final\bazin\include\antrenor.h
+1582664972 d:\curs c++\proiectegithub\proiect-final\bazin\include\antrenor.h
 	<iostream>
 	<vector>
 	"Cursant.h"
 
-1582579317 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
+1582650594 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
 	"Bazin.h"
 
-1582576591 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
+1582664972 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
 	<vector>
 	"Antrenor.h"
 	"Cursant.h"
+	"CursantPotential.h"
 
-1582572333 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
+1582656905 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
 	<iostream>
 	<vector>
 	"Bazin.h"
@@ -25,5 +26,11 @@
 	"Cursant.h"
 
 1582577412 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursant.h
+	<iostream>
+
+1582653690 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\cursantpotential.cpp
+	"CursantPotential.h"
+
+1582653857 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursantpotential.h
 	<iostream>
 
