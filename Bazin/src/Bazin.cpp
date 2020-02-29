@@ -97,15 +97,19 @@ void Bazin::StergeCursant()
    cout<<endl;
    for (unsigned int i=0; i<vect_antrenor.size();i++)
          vect_antrenor[i].AfiseazaCursantpentruSters();
+
    cout<<endl;
    cout<<"Selectati numarul cursantului de sters: ";
    short n;
    cin>>n;
    for (unsigned int i=0; i<vect_antrenor.size();i++)
         if (vect_antrenor[i].NrCursantiAntrenor()<n)
-             n=n-vect_antrenor[i].NrCursantiAntrenor();
-           else
-              vect_antrenor[i].StergeC(n);
+                 n=n-vect_antrenor[i].NrCursantiAntrenor();
+            else
+            {
+               vect_antrenor[i].StergeC(n);
+               break;
+            }
 }
 void Bazin::VizCursantiPotentiali()
 {
