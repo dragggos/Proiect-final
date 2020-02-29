@@ -37,7 +37,8 @@ int main()
      switch (n)
      {
          case 1: bazin.AdaugaAntrenor();break;
-      //   case 4: bazin.AdaugaCursant();break;
+         case 4: bazin.AdaugaCursant();break;
+         case 6: bazin.VizCursantiPotentiali();break;
      }
 
   }

@@ -15,6 +15,8 @@ class Bazin
         void AdaugaAntrenor();
         void AdaugaCursant();
         void AfiseazaCursant();
+        void StergeAntrenor();
+        void VizCursantiPotentiali();
 
 
 

@@ -12,16 +12,20 @@ class Antrenor
         Antrenor();
         Antrenor(string,string,short);
         virtual ~Antrenor();
-        void CreazaCursant();
+        void CreazaCursant(string, string, short);
         void AfiseazaCursant();
         bool VerificaDispAntrenor();
         void AfiseazaCursantiAntrenor();
+        string Get_nume_antrenor() {return nume;}
+        string Get_prenume_antrenor() {return prenume;}
+        short Get_id_antrenor() {return id;}
+        short NrCursAntrenor();
 
 
     protected:
 
     private:
-        string nume_ant,prenume_ant;
+        string nume,prenume;
         short id=0;
         vector<Cursant> vect_cursant;
 
