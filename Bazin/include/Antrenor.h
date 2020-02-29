@@ -14,7 +14,7 @@ class Antrenor
         virtual ~Antrenor();
         void CreazaCursant(string, string, short);
         void AfiseazaCursant();
-        void AfiseazaCursantpentruSters();
+        void AfiseazaCursantpentruSters(short);
         void StergeC(short);
         bool VerificaDispAntrenor();
         string Get_nume_antrenor() {return nume;}

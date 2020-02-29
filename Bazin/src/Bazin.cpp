@@ -95,8 +95,12 @@ void Bazin::StergeCursant()
    system("CLS");
    cout<<"Cursantii bazinului sunt:"<<endl;
    cout<<endl;
+   short x=1;
    for (unsigned int i=0; i<vect_antrenor.size();i++)
-         vect_antrenor[i].AfiseazaCursantpentruSters();
+       {
+           vect_antrenor[i].AfiseazaCursantpentruSters(x);
+           x=x+vect_antrenor[i].NrCursantiAntrenor();
+       }
 
    cout<<endl;
    cout<<"Selectati numarul cursantului de sters: ";

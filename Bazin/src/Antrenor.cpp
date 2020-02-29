@@ -38,15 +38,15 @@ void Antrenor::AfiseazaCursant()
     //cout<<endl;
     //system("PAUSE");
 }
-void Antrenor::AfiseazaCursantpentruSters()
+void Antrenor::AfiseazaCursantpentruSters(short n)
 {
     for(unsigned int i=0; i<vect_cursant.size();i++)
         {
-            static int j=1;
-            cout<<j<<". "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" ";
+            cout<<n<<". "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" ";
             cout<<endl;
-            j++;
+            n++;
         }
+
 }
 void Antrenor::CreazaCursant(string n, string p, short c)
 {
