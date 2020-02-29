@@ -36,8 +36,7 @@ void Bazin::AdaugaCursant()
                  cout<<"Ne pare rau, toti antrenorii nostri sunt ocupati!"<<endl;
                  cout<<"Lasati-ne datele de contact si va vom contacta deindata ce apare o pozitie libera!"<<endl;
                  cout<<endl;
-                 string n,p,e;
-                 long double t;
+                 string n,p,e,t;
                  cout<<"Introduceti numele: ";
                  cin>>n;
                  cout<<"Introduceti prenume: ";
@@ -46,7 +45,7 @@ void Bazin::AdaugaCursant()
                  cin>>e;
                  cout<<"Introduceti telefon: ";
                  cin>>t;
-                 vect_cursant_potential.push_back(CursantPotential(n,p,e,t));
+                 vect_cursant_potential.push_back(CursPotential(n,p,e,t));
                }
           else
           {
@@ -62,19 +61,18 @@ void Bazin::AdaugaCursant()
            cout<<"Selectati antrenor: ";
            cout<<endl;
            for (unsigned int j=0; j<vect_ant_disp.size();j++)
-               cout<<vect_ant_disp[j].Get_id_antrenor()<<"  "<<vect_ant_disp[j].Get_nume_antrenor()<<endl;
+               cout<<vect_ant_disp[j].Get_id_antrenor()<<". "<<vect_ant_disp[j].Get_nume_antrenor()<<" "<<vect_ant_disp[j].Get_prenume_antrenor()<<endl;
            cout<<"Introduceti id : ";
            cin>>m;
            for (unsigned i=0;i<vect_antrenor.size();i++)
                   if(m==vect_antrenor[i].Get_id_antrenor())
                               vect_antrenor[i].CreazaCursant(n,p,c);
-            vect_antrenor[0].AfiseazaCursant();
           }
 }
 void Bazin::StergeAntrenor()
 {
     for (unsigned int i=0; i<vect_antrenor.size();i++)
-        cout<<i<<"."<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_id_antrenor();
+        cout<<vect_antrenor[i].Get_id_antrenor()<<". "<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
     cout<<"Introducti id antrenor de sters: ";
     short n;
     cin>>n;
@@ -82,15 +80,32 @@ void Bazin::StergeAntrenor()
     short id=100;
     for (unsigned short i=0; i<vect_antrenor.size();i++)
       if (vect_antrenor[i].Get_id_antrenor()!=n)
-          if (minim>vect_antrenor[i].NrCursAntrenor())
+          if (minim>vect_antrenor[i].NrCursantiAntrenor())
              {
-               minim=vect_antrenor[i].NrCursAntrenor();
+               minim=vect_antrenor[i].NrCursantiAntrenor();
                id=vect_antrenor[i].Get_id_antrenor();
              }
      for (unsigned short i=0; i<vect_antrenor.size();i++)
         if (vect_antrenor[i].Get_id_antrenor()==n){}
 
 
+}
+void Bazin::StergeCursant()
+{
+   system("CLS");
+   cout<<"Cursantii bazinului sunt:"<<endl;
+   cout<<endl;
+   for (unsigned int i=0; i<vect_antrenor.size();i++)
+         vect_antrenor[i].AfiseazaCursantpentruSters();
+   cout<<endl;
+   cout<<"Selectati numarul cursantului de sters: ";
+   short n;
+   cin>>n;
+   for (unsigned int i=0; i<vect_antrenor.size();i++)
+        if (vect_antrenor[i].NrCursantiAntrenor()<n)
+             n=n-vect_antrenor[i].NrCursantiAntrenor();
+           else
+              vect_antrenor[i].StergeC(n);
 }
 void Bazin::VizCursantiPotentiali()
 {
@@ -105,8 +120,31 @@ void Bazin::VizCursantiPotentiali()
        cout<<vect_cursant_potential[i].Get_email_cursant_potential()<<"  tel: ";
        cout<<vect_cursant_potential[i].Get_tel_cursant_potential()<<endl;
    }
+   cout<<endl;
    system("PAUSE");
 }
+void Bazin::AfiseazaCursantiAntrenor()
+{
+  system("CLS");
+  cout<<"Selectati antrenorul: "<<endl;
+  cout<<endl;
+  for (unsigned short i=0;i<vect_antrenor.size();i++)
+    cout<<vect_antrenor[i].Get_id_antrenor()<<". "<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
+  cout<<endl;
+  cout<<"Introduceti id-ul antrenorului pentru care doriti sa vizualizati cursantii: ";
+  short n;
+  cin>>n;
+  cout<<endl;
+  for (unsigned short i=0;i<vect_antrenor.size();i++)
+    if (vect_antrenor[i].Get_id_antrenor()==n)
+        {
+            vect_antrenor[i].AfiseazaCursant();
+            cout<<"Total cursanti antrenor : "<<vect_antrenor[i].NrCursantiAntrenor()<<endl;
+        }
+   cout<<endl;
+   system("PAUSE");
+}
+
 Bazin::~Bazin()
 {
     //dtor

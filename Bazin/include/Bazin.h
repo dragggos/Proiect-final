@@ -3,7 +3,7 @@
 #include <vector>
 #include "Antrenor.h"
 #include "Cursant.h"
-#include "CursantPotential.h"
+#include "CursPotential.h"
 
 using namespace std;
 
@@ -13,9 +13,10 @@ class Bazin
         Bazin();
         virtual ~Bazin();
         void AdaugaAntrenor();
-        void AdaugaCursant();
-        void AfiseazaCursant();
         void StergeAntrenor();
+        void AfiseazaCursantiAntrenor();
+        void AdaugaCursant();
+        void StergeCursant();
         void VizCursantiPotentiali();
 
 
@@ -24,7 +25,7 @@ class Bazin
 
     private:
         vector<Antrenor> vect_antrenor;
-        vector<CursantPotential> vect_cursant_potential;
+        vector<CursPotential> vect_cursant_potential;
 
 
 };

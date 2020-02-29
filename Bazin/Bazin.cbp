@@ -36,13 +36,13 @@
 		</Compiler>
 		<Unit filename="include/Antrenor.h" />
 		<Unit filename="include/Bazin.h" />
+		<Unit filename="include/CursPotential.h" />
 		<Unit filename="include/Cursant.h" />
-		<Unit filename="include/CursantPotential.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Antrenor.cpp" />
 		<Unit filename="src/Bazin.cpp" />
+		<Unit filename="src/CursPotential.cpp" />
 		<Unit filename="src/Cursant.cpp" />
-		<Unit filename="src/CursantPotential.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,5 +1,6 @@
 #include "Antrenor.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -22,27 +23,44 @@ bool Antrenor::VerificaDispAntrenor()
 void Antrenor::AfiseazaCursant()
 {
     for(unsigned int i=0; i<vect_cursant.size();i++)
-        cout<<i+1<<"."<<vect_cursant[0].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_categorie_cursant()<<endl;
-    cout<<"Total cursanti : "<<vect_cursant.size()<<endl;
-    system("PAUSE");
+        {
+            cout<<i+1<<". "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" ";
+            switch (vect_cursant[i].Get_categorie_cursant())
+                {
+                  case 1: cout<<" categoria - copil "<<endl;break;
+                  case 2: cout<<" categoria - student "<<endl;break;
+                  case 3: cout<<" categoria - adult "<<endl;break;
+                  case 4: cout<<" categoria - pensionar "<<endl;break;
+                }
+        }
+    cout<<endl;
+    //cout<<"Total cursanti : "<<vect_cursant.size()<<endl;
+    //cout<<endl;
+    //system("PAUSE");
+}
+void Antrenor::AfiseazaCursantpentruSters()
+{
+    for(unsigned int i=0; i<vect_cursant.size();i++)
+        {
+            static int j=1;
+            cout<<j<<". "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_nume_cursant()<<" ";
+            cout<<endl;
+            j++;
+        }
 }
 void Antrenor::CreazaCursant(string n, string p, short c)
 {
-    /*string n,p;
-    short c;
-    cout<<"Introduceti nume cursant: ";
-    cin>>n;
-    cout<<"Introduceti prenume cursant: ";
-    cin>>p;
-    cout<<"Introduceti categorie cursant: 1.copil, 2.student, 3.adult, 4. pensionar: ";
-    cin>>c;*/
-    vect_cursant.push_back(Cursant(n,p,c));
+   vect_cursant.push_back(Cursant(n,p,c));
 }
-short Antrenor::NrCursAntrenor()
+short Antrenor::NrCursantiAntrenor()
 {
     return vect_cursant.size();
 }
 
+void Antrenor::StergeC(short n)
+{
+    vect_cursant.erase(vect_cursant.begin()+n);
+}
 
 Antrenor::~Antrenor()
 {

@@ -14,12 +14,13 @@ class Antrenor
         virtual ~Antrenor();
         void CreazaCursant(string, string, short);
         void AfiseazaCursant();
+        void AfiseazaCursantpentruSters();
+        void StergeC(short);
         bool VerificaDispAntrenor();
-        void AfiseazaCursantiAntrenor();
         string Get_nume_antrenor() {return nume;}
         string Get_prenume_antrenor() {return prenume;}
         short Get_id_antrenor() {return id;}
-        short NrCursAntrenor();
+        short NrCursantiAntrenor();
 
 
     protected:
