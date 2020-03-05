@@ -12,6 +12,7 @@ class Bazin
     public:
         Bazin();
         virtual ~Bazin();
+        void Meniu();
         void AdaugaAntrenor();
         void StergeAntrenor();
         void AfiseazaCursantiAntrenor();

@@ -9,6 +9,21 @@ Bazin::Bazin()
 {
     //ctor
 }
+void Bazin::Meniu()
+{
+    system("CLS");
+    cout<<"********Organizare activitate bazin*******"<<endl;
+    cout<<endl;
+    cout<<"Alegeti optiunea dorita:"<<endl;
+    cout<<endl;
+    cout<<"1. Adauga antrenor"<<endl;
+    cout<<"2. Sterge antrenor"<<endl;
+    cout<<"3. Afiseaza cursanti antrenor"<<endl;
+    cout<<"4. Adauga cursant"<<endl;
+    cout<<"5. Sterge cursant"<<endl;
+    cout<<"6. Vizualizare cursanti potentiali"<<endl;
+    cout<<"0. Inchidere program"<<endl;
+}
 void Bazin::AdaugaAntrenor()
 {
     static short i=0;
@@ -73,20 +88,34 @@ void Bazin::StergeAntrenor()
 {
     for (unsigned int i=0; i<vect_antrenor.size();i++)
         cout<<vect_antrenor[i].Get_id_antrenor()<<". "<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
-    cout<<"Introducti id antrenor de sters: ";
+    cout<<"Introduceti id antrenor de sters: ";
     short n;
     cin>>n;
     short minim=100;
     short id=100;
+    short poz_ant_min=0, poz_ant_sters=0;
     for (unsigned short i=0; i<vect_antrenor.size();i++)
       if (vect_antrenor[i].Get_id_antrenor()!=n)
-          if (minim>vect_antrenor[i].NrCursantiAntrenor())
+          {
+            if (minim>vect_antrenor[i].NrCursantiAntrenor())
              {
                minim=vect_antrenor[i].NrCursantiAntrenor();
                id=vect_antrenor[i].Get_id_antrenor();
+               poz_ant_min=i;
              }
-     for (unsigned short i=0; i<vect_antrenor.size();i++)
-        if (vect_antrenor[i].Get_id_antrenor()==n){}
+          }
+         else poz_ant_sters=i;
+
+    if (40-vect_antrenor[poz_ant_sters].NrCursantiAntrenor()<=minim)
+       {
+           for (unsigned j=0;j<vect_antrenor[poz_ant_sters].NrCursantiAntrenor();j++)
+              {
+                vect_antrenor[poz_ant_min].
+                vect_antrenor[poz_ant_sters].StergeC(j);
+              }
+       }
+
+
 
 
 }

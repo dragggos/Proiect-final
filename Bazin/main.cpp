@@ -4,36 +4,22 @@
 
 using namespace std;
 
-void Meniu()
-{
-    system("CLS");
-    cout<<"********Organizare activitate bazin*******"<<endl;
-    cout<<endl;
-    cout<<"Alegeti optiunea dorita:"<<endl;
-    cout<<endl;
-    cout<<"1. Adauga antrenor"<<endl;
-    cout<<"2. Sterge antrenor"<<endl;
-    cout<<"3. Afiseaza cursanti antrenor"<<endl;
-    cout<<"4. Adauga cursant"<<endl;
-    cout<<"5. Sterge cursant"<<endl;
-    cout<<"6. Vizualizare cursanti potentiali"<<endl;
-    cout<<"0. Inchidere program"<<endl;
-}
 int main()
 {
    Bazin bazin;
    short n=1;
    while (n!=0)
   {
-     Meniu();
+     bazin.Meniu();
      cout<<endl;
      cout<<"Introduceti optiunea : ";
      cin>>n;
-   /*while (n>2)
+     while (n>6)
             {
+              cout<<endl;
               cout<<"Optiune incorecta, va rog reintroduceti optiunea : ";
               cin>>n;
-             }*/
+             }
      switch (n)
      {
          case 1: bazin.AdaugaAntrenor();break;
@@ -42,7 +28,7 @@ int main()
          case 5: bazin.StergeCursant();break;
          case 6: bazin.VizCursantiPotentiali();break;
      }
-
   }
+  return 0;
 }
 

@@ -61,7 +61,10 @@ void Antrenor::StergeC(short n)
 {
     vect_cursant.erase(vect_cursant.begin()+n);
 }
-
+void Antrenor::AdaugaC(short n,
+{
+    vect_cursant.push_back(cursant);
+}
 Antrenor::~Antrenor()
 {
     //dtor
