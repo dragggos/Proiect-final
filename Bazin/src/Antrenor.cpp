@@ -46,7 +46,6 @@ void Antrenor::AfiseazaCursantpentruSters(short n)
             cout<<endl;
             n++;
         }
-
 }
 void Antrenor::CreazaCursant(string n, string p, short c)
 {
@@ -56,15 +55,19 @@ short Antrenor::NrCursantiAntrenor()
 {
     return vect_cursant.size();
 }
-
 void Antrenor::StergeC(short n)
 {
     vect_cursant.erase(vect_cursant.begin()+n);
 }
-void Antrenor::AdaugaC(short n,
+Cursant Antrenor::ReturnCursant()
 {
-    vect_cursant.push_back(cursant);
+    return vect_cursant[0];
 }
+void Antrenor::MutaCursant(Cursant c)
+{
+    vect_cursant.push_back(c);
+}
+
 Antrenor::~Antrenor()
 {
     //dtor

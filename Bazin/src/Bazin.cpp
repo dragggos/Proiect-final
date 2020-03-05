@@ -110,7 +110,7 @@ void Bazin::StergeAntrenor()
        {
            for (unsigned j=0;j<vect_antrenor[poz_ant_sters].NrCursantiAntrenor();j++)
               {
-                vect_antrenor[poz_ant_min].
+                vect_antrenor[poz_ant_min].MutaCursant(vect_antrenor[poz_ant_sters].ReturnCursant());
                 vect_antrenor[poz_ant_sters].StergeC(j);
               }
        }

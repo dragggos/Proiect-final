@@ -21,7 +21,8 @@ class Antrenor
         string Get_prenume_antrenor() {return prenume;}
         short Get_id_antrenor() {return id;}
         short NrCursantiAntrenor();
-        void AdaugaC(Cursant);
+        Cursant ReturnCursant();
+        void MutaCursant(Cursant);
 
 
     protected:
