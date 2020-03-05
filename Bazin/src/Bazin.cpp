@@ -106,18 +106,14 @@ void Bazin::StergeAntrenor()
           }
          else poz_ant_sters=i;
 
-    if (40-vect_antrenor[poz_ant_sters].NrCursantiAntrenor()<=minim)
+    if (40-minim>=vect_antrenor[poz_ant_sters].NrCursantiAntrenor())
        {
            for (unsigned j=0;j<vect_antrenor[poz_ant_sters].NrCursantiAntrenor();j++)
               {
                 vect_antrenor[poz_ant_min].MutaCursant(vect_antrenor[poz_ant_sters].ReturnCursant());
-                vect_antrenor[poz_ant_sters].StergeC(j);
+                vect_antrenor[poz_ant_sters].StergeC(0);
               }
        }
-
-
-
-
 }
 void Bazin::StergeCursant()
 {

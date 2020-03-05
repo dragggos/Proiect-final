@@ -9,7 +9,7 @@
 	<vector>
 	"Cursant.h"
 
-1583241492 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
+1583406407 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
 	"Bazin.h"
 	"Antrenor.h"
 	<vector>
@@ -21,7 +21,7 @@
 	"Cursant.h"
 	"CursPotential.h"
 
-1583241549 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
+1583405931 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
 	<iostream>
 	<vector>
 	"Bazin.h"
