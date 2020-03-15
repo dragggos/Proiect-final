@@ -17,7 +17,7 @@ Antrenor::Antrenor(string n, string p, short i)
 
 bool Antrenor::VerificaDispAntrenor()
 {
-    if (vect_cursant.size()<40) return true;
+    if (vect_cursant.size()<4) return true;
       else return false;
 }
 void Antrenor::AfiseazaCursant()

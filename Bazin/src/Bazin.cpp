@@ -86,34 +86,66 @@ void Bazin::AdaugaCursant()
 }
 void Bazin::StergeAntrenor()
 {
-    for (unsigned int i=0; i<vect_antrenor.size();i++)
-        cout<<vect_antrenor[i].Get_id_antrenor()<<". "<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
+    for (unsigned int r=0; r<vect_antrenor.size();r++)
+        cout<<vect_antrenor[r].Get_id_antrenor()<<". "<<vect_antrenor[r].Get_nume_antrenor()<<" "<<vect_antrenor[r].Get_prenume_antrenor()<<endl;
     cout<<"Introduceti id antrenor de sters: ";
-    short n;
+    int n;
     cin>>n;
-    short minim=100;
-    short id=100;
-    short poz_ant_min=0, poz_ant_sters=0;
+    int minim=100, total_locuri_disp=0;
+    int poz_ant_min=0, poz_ant_sters=0;
     for (unsigned short i=0; i<vect_antrenor.size();i++)
       if (vect_antrenor[i].Get_id_antrenor()!=n)
           {
+            total_locuri_disp=total_locuri_disp+(4-vect_antrenor[i].NrCursantiAntrenor());
             if (minim>vect_antrenor[i].NrCursantiAntrenor())
              {
                minim=vect_antrenor[i].NrCursantiAntrenor();
-               id=vect_antrenor[i].Get_id_antrenor();
                poz_ant_min=i;
              }
           }
          else poz_ant_sters=i;
 
-    if (40-minim>=vect_antrenor[poz_ant_sters].NrCursantiAntrenor())
+   if (4-minim>=vect_antrenor[poz_ant_sters].NrCursantiAntrenor())
        {
-           for (unsigned j=0;j<vect_antrenor[poz_ant_sters].NrCursantiAntrenor();j++)
+           for (unsigned short j=0;j<vect_antrenor[poz_ant_sters].NrCursantiAntrenor();j++)
               {
                 vect_antrenor[poz_ant_min].MutaCursant(vect_antrenor[poz_ant_sters].ReturnCursant());
                 vect_antrenor[poz_ant_sters].StergeC(0);
               }
        }
+      else
+         {
+          /* while (total_locuri_disp!=0)
+            {
+              short k=0;
+              while (vect_antrenor[k].NrCursantiAntrenor()<=4)
+                {
+                  if (k!=poz_ant_sters)
+                    for (unsigned short index=0;index<(4-vect_antrenor[k].NrCursantiAntrenor());index++)
+                     {
+                       vect_antrenor[k].MutaCursant(vect_antrenor[poz_ant_sters].ReturnCursant());
+                       vect_antrenor[poz_ant_sters].StergeC(0);
+                       total_locuri_disp--;
+                     }
+                  k++;
+                }
+              }*/
+
+           while (vect_antrenor[poz_ant_sters].NrCursantiAntrenor()>0)
+               {
+                 unsigned short i=0;
+                 while (i<vect_antrenor.size())
+                   {
+                    if(i!=poz_ant_sters)
+                      {
+                        vect_antrenor[i].MutaCursant(vect_antrenor[poz_ant_sters].ReturnCursant());
+                        vect_antrenor[poz_ant_sters].StergeC(0);
+                      }
+                     i++;
+                    }
+               }
+           }
+vect_antrenor.erase(vect_antrenor.begin()+poz_ant_sters);
 }
 void Bazin::StergeCursant()
 {
