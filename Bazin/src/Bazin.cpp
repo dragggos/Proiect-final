@@ -2,6 +2,8 @@
 #include "Antrenor.h"
 #include <vector>
 #include <iostream>
+#include <fstream>
+
 
 using namespace std;
 
@@ -26,7 +28,7 @@ void Bazin::Meniu()
 }
 void Bazin::AdaugaAntrenor()
 {
-    static short i=0;
+    static short i=1;
     string n,p;
     cout<<"Introduceti nume antrenor: ";
     cin>>n;
@@ -71,8 +73,15 @@ void Bazin::AdaugaCursant()
            cin>>n;
            cout<<"Introduceti prenume cursant: ";
            cin>>p;
-           cout<<"Introduceti categorie cursant: 1.copil, 2.student, 3.adult, 4. pensionar: ";
+           cout<<"Selectati categorie cursant: 1.copil, 2.student, 3.adult, 4. pensionar: ";
            cin>>c;
+           while (c>4)
+            {
+              cout<<endl;
+              cout<<"Optiune incorecta, va rog reintroduceti categoria : ";
+              cin>>c;
+              cout<<endl;
+             }
            cout<<"Selectati antrenor: ";
            cout<<endl;
            for (unsigned int j=0; j<vect_ant_disp.size();j++)
@@ -91,6 +100,24 @@ void Bazin::StergeAntrenor()
     cout<<"Introduceti id antrenor de sters: ";
     int n;
     cin>>n;
+    bool opt=false;
+    while (opt!=true)
+    {
+      for(unsigned short index=0;index<vect_antrenor.size();index++)
+         if (n!=vect_antrenor[index].Get_id_antrenor())
+                opt=false;
+               else
+               {
+                opt=true;
+                break;
+               }
+       if (opt==false)
+           {
+             cout<<endl;
+             cout<<"Optiune incorecta, va rog reintroduceti optiunea : ";
+              cin>>n;
+            }
+       }
     short minim=100, total_locuri_disp=0;
     short poz_ant_min=0, poz_ant_sters=0;
     for (unsigned short i=0; i<vect_antrenor.size();i++)
@@ -165,6 +192,12 @@ void Bazin::StergeCursant()
    cout<<"Selectati numarul cursantului de sters: ";
    short n;
    cin>>n;
+   while (n>x)
+            {
+              cout<<endl;
+              cout<<"Optiune incorecta, va rog reintroduceti numarul cursantului : ";
+              cin>>n;
+             }
    for (unsigned int i=0; i<vect_antrenor.size();i++)
         if (vect_antrenor[i].NrCursantiAntrenor()<n)
                  n=n-vect_antrenor[i].NrCursantiAntrenor();
@@ -211,7 +244,21 @@ void Bazin::AfiseazaCursantiAntrenor()
    cout<<endl;
    system("PAUSE");
 }
-
+void Bazin::ExportAntrenori(ofstream &out)
+{
+    for (unsigned short i=0;i<vect_antrenor.size();i++)
+        out<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
+}
+void Bazin::ExportCursant(ofstream &out)
+{
+    for (unsigned short i=0;i<vect_antrenor.size();i++)
+        out<<vect_antrenor[i].ExportC(out)<<" "<<endl;
+}
+void Bazin::ExportCursantiPotentiali(ofstream &out)
+{
+    for (unsigned short i=0;i<vect_cursant_potential.size();i++)
+        out<<vect_cursant_potential[i].Get_nume_cursant_potential()<<" "<<vect_cursant_potential[i].Get_prenume_cursant_potential()<<endl;
+}
 Bazin::~Bazin()
 {
     //dtor

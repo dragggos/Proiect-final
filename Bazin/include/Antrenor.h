@@ -23,13 +23,13 @@ class Antrenor
         short NrCursantiAntrenor();
         Cursant ReturnCursant();
         void MutaCursant(Cursant);
-
+        string ExportC(ofstream&);
 
     protected:
 
     private:
         string nume,prenume;
-        short id=0;
+        short id=1;
         vector<Cursant> vect_cursant;
 
 

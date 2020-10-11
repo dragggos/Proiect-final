@@ -1,35 +1,39 @@
 # depslib dependency file v1.0
-1584197134 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
+1602416760 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
 	"Antrenor.h"
 	<iostream>
+	<fstream>
 	<vector>
 
-1584183724 d:\curs c++\proiectegithub\proiect-final\bazin\include\antrenor.h
+1602417865 d:\curs c++\proiectegithub\proiect-final\bazin\include\antrenor.h
 	<iostream>
 	<vector>
 	"Cursant.h"
 
-1584299200 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
+1602417865 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
 	"Bazin.h"
 	"Antrenor.h"
 	<vector>
 	<iostream>
+	<fstream>
 
-1583241492 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
+1602411048 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
 	<vector>
+	<fstream>
 	"Antrenor.h"
 	"Cursant.h"
 	"CursPotential.h"
 
-1583405931 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
+1602411048 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
 	<iostream>
+	<fstream>
 	<vector>
 	"Bazin.h"
 
-1582917864 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\cursant.cpp
+1582921464 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\cursant.cpp
 	"Cursant.h"
 
-1582577412 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursant.h
+1582581012 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursant.h
 	<iostream>
 
 1582653690 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\cursantpotential.cpp
@@ -38,9 +42,9 @@
 1582970084 d:\curs c++\proiectegithub\proiect-final\bazin\include\cursantpotential.h
 	<iostream>
 
-1582972121 d:\curs c++\proiectegithub\proiect-final\bazin\include\curspotential.h
+1582975721 d:\curs c++\proiectegithub\proiect-final\bazin\include\curspotential.h
 	<iostream>
 
-1582972037 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\curspotential.cpp
+1582975637 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\curspotential.cpp
 	"CursPotential.h"
 

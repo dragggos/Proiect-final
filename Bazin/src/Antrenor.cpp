@@ -1,5 +1,6 @@
 #include "Antrenor.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -68,6 +69,11 @@ void Antrenor::MutaCursant(Cursant c)
     vect_cursant.push_back(c);
 }
 
+string Antrenor::ExportC(ofstream &out)
+{
+    for (unsigned short i=0;i<vect_cursant.size();i++)
+          out<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_prenume_cursant()<<" ";
+}
 Antrenor::~Antrenor()
 {
     //dtor

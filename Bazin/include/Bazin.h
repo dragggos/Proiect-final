@@ -1,6 +1,7 @@
 #ifndef BAZIN_H
 #define BAZIN_H
 #include <vector>
+#include <fstream>
 #include "Antrenor.h"
 #include "Cursant.h"
 #include "CursPotential.h"
@@ -19,8 +20,9 @@ class Bazin
         void AdaugaCursant();
         void StergeCursant();
         void VizCursantiPotentiali();
-
-
+        void ExportAntrenori(ofstream&);
+        void ExportCursant(ofstream&);
+        void ExportCursantiPotentiali(ofstream&);
 
     protected:
 

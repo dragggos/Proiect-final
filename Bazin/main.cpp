@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include "Bazin.h"
 
@@ -29,6 +30,13 @@ int main()
          case 5: bazin.StergeCursant();break;
          case 6: bazin.VizCursantiPotentiali();break;
      }
+       ofstream outAntrenori("Antrenori.txt");
+       bazin.ExportAntrenori(outAntrenori);
+       ofstream outCursanti("Cursanti.txt");
+       bazin.ExportCursant(outCursanti);
+       ofstream outCursantiPotentiali("CursantiPotentiali.txt");
+       bazin.ExportCursantiPotentiali(outCursantiPotentiali);
+
   }
   return 0;
 }
