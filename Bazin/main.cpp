@@ -38,6 +38,21 @@ int main()
         bazin.ImportCursantiPotentiali(d,dd,e,t);
       }
     }
+    ifstream inCursanti("Cursanti.txt");
+    while(!inCursanti.eof())
+    {
+      char bufT[70];
+      string d,dd;
+      short c;
+      inCursanti.getline(bufT,70);
+      stringstream ss;
+      ss<< bufT;
+      while (ss.str().length() != 0)
+      {
+        ss>>d>>dd>>c;
+        bazin.ImportCursanti(d,dd,c);
+      }
+    }
    short n=1;
    while (n!=0)
   {
@@ -67,8 +82,6 @@ int main()
    bazin.ExportCursant(outCursanti);
    ofstream outCursantiPotentiali("CursantiPotentiali.txt");
    bazin.ExportCursantiPotentiali(outCursantiPotentiali);
-
-
-  return 0;
+   return 0;
 }
 

@@ -275,6 +275,12 @@ void Bazin::ImportCursantiPotentiali(string n, string p, string e, string t)
 {
    vect_cursant_potential.push_back(CursPotential(n,p,e,t));
 }
+void Bazin::ImportCursanti(string n, string p, short c)
+{
+   for (unsigned short i=0;i<vect_antrenor.size();i++)
+        vect_antrenor[i].ImportC(n,p,c);
+}
+
 Bazin::~Bazin()
 {
     //dtor

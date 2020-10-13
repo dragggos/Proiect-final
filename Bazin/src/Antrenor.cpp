@@ -79,6 +79,11 @@ string Antrenor::ExportC(ofstream &out)
     for (unsigned short i=0;i<vect_cursant.size();i++)
           out<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_categorie_cursant()<<" ";
 }
+
+void Antrenor::ImportC(string n, string p, short c)
+{
+   vect_cursant.push_back(Cursant(n,p,c));
+}
 Antrenor::~Antrenor()
 {
     //dtor
