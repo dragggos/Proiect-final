@@ -1,3 +1,2 @@
-serbu dra 1
-serbu simona 2
-  2
+serbu dragos 1
+popa vasile 2

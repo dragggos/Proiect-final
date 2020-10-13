@@ -28,14 +28,22 @@ void Bazin::Meniu()
 }
 void Bazin::AdaugaAntrenor()
 {
-    static short i=1;
+   // static short i=1;
+    short max=1;
     string n,p;
     cout<<"Introduceti nume antrenor: ";
     cin>>n;
     cout<<"Introduceti prenume antrenor: ";
     cin>>p;
-    vect_antrenor.push_back(Antrenor(n,p,i));
-    i++;
+    if (vect_antrenor.size()==0)
+         vect_antrenor.push_back(Antrenor(n,p,1));
+       else
+         {
+          for (short i=1; i<vect_antrenor.size();i++)
+            if (max<vect_antrenor[i].Get_id_antrenor())
+                      max=vect_antrenor[i].Get_id_antrenor();
+          vect_antrenor.push_back(Antrenor(n,p,++max));
+         }
 }
 void Bazin::AdaugaCursant()
 {
@@ -261,7 +269,11 @@ void Bazin::ExportCursant(ofstream &out)
 void Bazin::ExportCursantiPotentiali(ofstream &out)
 {
     for (unsigned short i=0;i<vect_cursant_potential.size();i++)
-        out<<vect_cursant_potential[i].Get_nume_cursant_potential()<<" "<<vect_cursant_potential[i].Get_prenume_cursant_potential()<<endl;
+        out<<vect_cursant_potential[i].Get_nume_cursant_potential()<<" "<<vect_cursant_potential[i].Get_prenume_cursant_potential()<<" "<<vect_cursant_potential[i].Get_email_cursant_potential()<<" "<<vect_cursant_potential[i].Get_tel_cursant_potential()<<endl;
+}
+void Bazin::ImportCursantiPotentiali(string n, string p, string e, string t)
+{
+   vect_cursant_potential.push_back(CursPotential(n,p,e,t));
 }
 Bazin::~Bazin()
 {

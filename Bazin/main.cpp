@@ -13,13 +13,30 @@ int main()
    while(!inAntrenori.eof())
     {
       char bufT[20];
-      string d, dd;
+      string d,dd;
       short i;
       inAntrenori.getline(bufT, 20);
       stringstream ss;
       ss<< bufT;
-      ss>>d>>dd>>i;
-      bazin.ImportAntrenori(d,dd,i);
+      if(ss.str().length() != 0)
+      {
+        ss>>d>>dd>>i;
+        bazin.ImportAntrenori(d,dd,i);
+      }
+    }
+    ifstream inCursantiPotentiali("CursantiPotentiali.txt");
+    while(!inCursantiPotentiali.eof())
+    {
+      char bufT[70];
+      string d,dd,e,t;
+      inCursantiPotentiali.getline(bufT,70);
+      stringstream ss;
+      ss<< bufT;
+      if(ss.str().length() != 0)
+      {
+        ss>>d>>dd>>e>>t;
+        bazin.ImportCursantiPotentiali(d,dd,e,t);
+      }
     }
    short n=1;
    while (n!=0)
