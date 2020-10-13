@@ -23,6 +23,7 @@ class Bazin
         void ExportAntrenori(ofstream&);
         void ExportCursant(ofstream&);
         void ExportCursantiPotentiali(ofstream&);
+        void ImportAntrenori(string , string , short);
 
     protected:
 

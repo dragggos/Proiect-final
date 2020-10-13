@@ -247,7 +247,11 @@ void Bazin::AfiseazaCursantiAntrenor()
 void Bazin::ExportAntrenori(ofstream &out)
 {
     for (unsigned short i=0;i<vect_antrenor.size();i++)
-        out<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<endl;
+        out<<vect_antrenor[i].Get_nume_antrenor()<<" "<<vect_antrenor[i].Get_prenume_antrenor()<<" "<<vect_antrenor[i].Get_id_antrenor()<<endl;
+}
+void Bazin::ImportAntrenori(string n, string p, short i)
+{
+   vect_antrenor.push_back(Antrenor(n,p,i));
 }
 void Bazin::ExportCursant(ofstream &out)
 {

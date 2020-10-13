@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <vector>
 #include "Bazin.h"
 
@@ -8,6 +9,18 @@ using namespace std;
 int main()
 {
    Bazin bazin;
+   ifstream inAntrenori("Antrenori.txt");
+   while(!inAntrenori.eof())
+    {
+      char bufT[20];
+      string d, dd;
+      short i;
+      inAntrenori.getline(bufT, 20);
+      stringstream ss;
+      ss<< bufT;
+      ss>>d>>dd>>i;
+      bazin.ImportAntrenori(d,dd,i);
+    }
    short n=1;
    while (n!=0)
   {
@@ -30,14 +43,15 @@ int main()
          case 5: bazin.StergeCursant();break;
          case 6: bazin.VizCursantiPotentiali();break;
      }
-       ofstream outAntrenori("Antrenori.txt");
-       bazin.ExportAntrenori(outAntrenori);
-       ofstream outCursanti("Cursanti.txt");
-       bazin.ExportCursant(outCursanti);
-       ofstream outCursantiPotentiali("CursantiPotentiali.txt");
-       bazin.ExportCursantiPotentiali(outCursantiPotentiali);
-
   }
+   ofstream outAntrenori("Antrenori.txt");
+   bazin.ExportAntrenori(outAntrenori);
+   ofstream outCursanti("Cursanti.txt");
+   bazin.ExportCursant(outCursanti);
+   ofstream outCursantiPotentiali("CursantiPotentiali.txt");
+   bazin.ExportCursantiPotentiali(outCursantiPotentiali);
+
+
   return 0;
 }
 
