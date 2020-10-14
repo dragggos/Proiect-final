@@ -11,7 +11,6 @@ class Antrenor
     public:
         Antrenor();
         Antrenor(string,string,short);
-        Antrenor(string,string);
         virtual ~Antrenor();
         void CreazaCursant(string, string, short);
         void AfiseazaCursant();

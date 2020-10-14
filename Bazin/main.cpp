@@ -39,45 +39,23 @@ int main()
       }
     }
     ifstream inCursanti("Cursanti.txt");
+    short nrlinie=0;
     while(!inCursanti.eof())
     {
       char bufT[70];
       string d,dd;
-      short c;   short nrlinie=0;
+      short c;
       inCursanti.getline(bufT,70);
       stringstream ss;
       ss<< bufT;
       while ((ss.str().length() != 0) && (ss.tellg() != -1))
       {
-
         ss>>d>>dd>>c;
         bazin.ImportCursanti(d,dd,c,nrlinie);
-        nrlinie++;
       }
+       nrlinie++;
     }
-   short n=1;
-   while (n!=0)
-  {
-     bazin.Meniu();
-     cout<<endl;
-     cout<<"Introduceti optiunea : ";
-     cin>>n;
-     while (n>6)
-            {
-              cout<<endl;
-              cout<<"Optiune incorecta, va rog reintroduceti optiunea : ";
-              cin>>n;
-             }
-     switch (n)
-     {
-         case 1: bazin.AdaugaAntrenor();break;
-         case 2: bazin.StergeAntrenor();break;
-         case 3: bazin.AfiseazaCursantiAntrenor();break;
-         case 4: bazin.AdaugaCursant();break;
-         case 5: bazin.StergeCursant();break;
-         case 6: bazin.VizCursantiPotentiali();break;
-     }
-  }
+
    ofstream outAntrenori("Antrenori.txt");
    bazin.ExportAntrenori(outAntrenori);
    ofstream outCursanti("Cursanti.txt");

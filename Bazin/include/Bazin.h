@@ -33,7 +33,6 @@ class Bazin
         vector<Antrenor> vect_antrenor;
         vector<CursPotential> vect_cursant_potential;
 
-
 };
 
 #endif // BAZIN_H

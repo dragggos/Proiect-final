@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
+#define NR 4;
 
 using namespace std;
 
@@ -28,7 +28,6 @@ void Bazin::Meniu()
 }
 void Bazin::AdaugaAntrenor()
 {
-   // static short i=1;
     short max=1;
     string n,p;
     cout<<"Introduceti nume antrenor: ";
@@ -39,7 +38,7 @@ void Bazin::AdaugaAntrenor()
          vect_antrenor.push_back(Antrenor(n,p,1));
        else
          {
-          for (short i=1; i<vect_antrenor.size();i++)
+          for (unsigned short i=1; i<vect_antrenor.size();i++)
             if (max<vect_antrenor[i].Get_id_antrenor())
                       max=vect_antrenor[i].Get_id_antrenor();
           vect_antrenor.push_back(Antrenor(n,p,++max));
@@ -277,8 +276,7 @@ void Bazin::ImportCursantiPotentiali(string n, string p, string e, string t)
 }
 void Bazin::ImportCursanti(string n, string p, short c, short nrlinie)
 {
-   //for (unsigned short i=0;i<vect_antrenor.size();i++)
-        vect_antrenor[nrlinie].ImportC(n,p,c);
+   vect_antrenor[nrlinie].ImportC(n,p,c);
 }
 
 Bazin::~Bazin()

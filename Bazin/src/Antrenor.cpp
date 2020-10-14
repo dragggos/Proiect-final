@@ -15,12 +15,6 @@ Antrenor::Antrenor(string n, string p, short i)
     prenume=p;
     id=i;
 }
-Antrenor::Antrenor(string n, string p)
-{
-    nume=n;
-    prenume=p;
-
-}
 bool Antrenor::VerificaDispAntrenor()
 {
     if (vect_cursant.size()<4) return true;
@@ -86,8 +80,7 @@ void Antrenor::ExportC(ofstream &out)
 
 void Antrenor::ImportC(string n, string p, short c)
 {
-   //for (unsigned short i=0;i<vect_cursant.size();i++)
-                  vect_cursant.push_back(Cursant(n,p,c));
+    vect_cursant.push_back(Cursant(n,p,c));
 }
 Antrenor::~Antrenor()
 {
