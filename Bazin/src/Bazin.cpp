@@ -264,7 +264,7 @@ void Bazin::ImportAntrenori(string n, string p, short i)
 void Bazin::ExportCursant(ofstream &out)
 {
     for (unsigned short i=0;i<vect_antrenor.size();i++)
-        out<<vect_antrenor[i].ExportC(out)<<" "<<endl;
+        vect_antrenor[i].ExportC(out);
 }
 void Bazin::ExportCursantiPotentiali(ofstream &out)
 {

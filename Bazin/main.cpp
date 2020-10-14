@@ -47,7 +47,8 @@ int main()
       inCursanti.getline(bufT,70);
       stringstream ss;
       ss<< bufT;
-      while (ss.str().length() != 0)
+      while
+        ((ss.str().length() != 0) && (ss.tellg() != -1))
       {
         ss>>d>>dd>>c;
         bazin.ImportCursanti(d,dd,c);

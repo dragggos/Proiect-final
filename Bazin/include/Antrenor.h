@@ -27,7 +27,7 @@ class Antrenor
         short NrCursantiAntrenor();
         Cursant ReturnCursant();
         void MutaCursant(Cursant);
-        string ExportC(ofstream&);
+        void ExportC(ofstream&);
         void ImportC(string, string, short);
 
     protected:
