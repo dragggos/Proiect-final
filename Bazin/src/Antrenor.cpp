@@ -76,9 +76,11 @@ void Antrenor::MutaCursant(Cursant c)
 
 void Antrenor::ExportC(ofstream &out)
 {
-    for (unsigned short i=0;i<vect_cursant.size()-1;i++)
+    for (unsigned short i=0;i<vect_cursant.size();i++)
+       if (i<vect_cursant.size()-1)
           out<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_categorie_cursant()<<" ";
-     out<<vect_cursant[vect_cursant.size()-1].Get_nume_cursant()<<" "<<vect_cursant[vect_cursant.size()-1].Get_prenume_cursant()<<" "<<vect_cursant[vect_cursant.size()-1].Get_categorie_cursant();
+        else
+            out<<vect_cursant[i].Get_nume_cursant()<<" "<<vect_cursant[i].Get_prenume_cursant()<<" "<<vect_cursant[i].Get_categorie_cursant();
      out<<endl;
 }
 

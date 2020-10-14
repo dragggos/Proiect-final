@@ -43,13 +43,13 @@ int main()
     {
       char bufT[70];
       string d,dd;
-      short c;
+      short c;   short nrlinie=0;
       inCursanti.getline(bufT,70);
       stringstream ss;
       ss<< bufT;
       while ((ss.str().length() != 0) && (ss.tellg() != -1))
       {
-        short nrlinie=0;
+
         ss>>d>>dd>>c;
         bazin.ImportCursanti(d,dd,c,nrlinie);
         nrlinie++;

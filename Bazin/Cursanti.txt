@@ -1,2 +1,3 @@
-serbu simona 3 serbu andre 1
-craiu ovi 3
+serbu simona 1
+seebu andrei 1
+
