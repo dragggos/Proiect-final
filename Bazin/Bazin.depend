@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1602667967 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
+1602668111 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\antrenor.cpp
 	"Antrenor.h"
 	<iostream>
 	<fstream>
@@ -10,21 +10,21 @@
 	<vector>
 	"Cursant.h"
 
-1602622742 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
+1602669214 source:d:\curs c++\proiectegithub\proiect-final\bazin\src\bazin.cpp
 	"Bazin.h"
 	"Antrenor.h"
 	<vector>
 	<iostream>
 	<fstream>
 
-1602622107 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
+1602669214 d:\curs c++\proiectegithub\proiect-final\bazin\include\bazin.h
 	<vector>
 	<fstream>
 	"Antrenor.h"
 	"Cursant.h"
 	"CursPotential.h"
 
-1602667800 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
+1602669214 source:d:\curs c++\proiectegithub\proiect-final\bazin\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>
